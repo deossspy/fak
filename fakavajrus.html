@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fakavajrus</title>
+</head>
+<body>
+    <style>
+
+
+
+
+        .fakthebutton{
+            width: 128px;
+            height: 36px;
+            border: 0px;
+            float: right;
+            vertical-align: middle;
+            border-radius: 4px;
+            background-color: #979797;
+            transition-duration: 0.25s;
+            margin-top: 10px;
+        }
+        .fakthebutton:hover{
+            background-color: #535353;
+            cursor: pointer;
+            color: white;
+        }
+
+        .images{
+            border-radius: 6px;
+            width: 128px;
+            height: 128px;
+            margin-top: 30px;
+        }
+
+        button {
+    transition: transform 0.3s ease;
+}
+
+/* CSS for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+/* CSS for closing the modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* CSS for the video inside the modal */
+#adVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Make the button hidden initially */
+#fullscreenButton {
+  display: none;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+#character {
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+
+        #randomguy {
+    transition: transform 0.25s ease;
+}
+
+.testl{
+    opacity: 1;
+    float: left;
+}
+
+    </style>
+
+<audio id="coinAudio" src="coin.wav"></audio>
+<audio id="backgroundMusiclol" src="backgroundMusic.mp3"></audio>
+
+
+<center><h1>faks</h1></center>
+  
+
+
+<center><h2 id="cookieValue">0</h2></center>
+
+<center><img id="randomguy" class="images" src="character11.png"></center>
+
+
+<script>
+
+
+const button3 = document.querySelector("button#balls.fakthebutton");
+
+
+const img = document.getElementById("randomguy");
+        const cookieValueElement = document.getElementById("cookieValue");
+        const coinAudio = document.getElementById("coinAudio");
+        let cookieValue = 0;
+
+        // Function to move the image up and update the cookie value
+        function moveImageAndIncrementCookieValue() {
+            // Move the image up by 3 pixels
+            img.style.transform = "translateY(-30px)";
+
+            // Increment the cookie value
+            cookieValue++;
+            cookieValueElement.textContent = cookieValue;
+
+            // Play the "coin.wav" audio
+            coinAudio.currentTime = 0; // Reset audio to the beginning
+            coinAudio.play();
+
+            // Reset the image position after a short delay (0.3s in this example)
+            setTimeout(() => {
+                img.style.transform = "translateY(0)";
+            }, 300); // 300 milliseconds = 0.3 seconds
+        }
+
+        // Listen for the spacebar key press and execute the action
+        document.addEventListener("keydown", (event) => {
+            if (event.key === " ") {
+                moveImageAndIncrementCookieValue();
+            }
+        });
+
+
+        const bgmusic = document.getElementById('backgroundMusiclol');
+
+
+        
+
+</script>
+
+</body>
+</html>
